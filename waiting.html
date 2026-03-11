@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduStream Academy | Excellence in Tech</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-yellow: #FFD700;
+            --deep-black: #000000;
+            --soft-black: #0a0a0a;
+            --glass: rgba(255, 215, 0, 0.05);
+        }
+
+        body {
+            background-color: var(--deep-black);
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .heading-font { font-family: 'Syncopate', sans-serif; }
+
+        /* Navigation */
+        .nav-link { color: #ffffff !important; font-weight: 600; cursor: pointer; transition: 0.3s; }
+        .nav-link:hover, .nav-link.active { color: var(--primary-yellow) !important; }
+
+        /* Custom Components */
+        .app-view { display: none; animation: fadeIn 0.5s ease; }
+        .view-active { display: block; }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; } to { opacity: 1; }
+        }
+
+        .btn-yellow {
+            background-color: var(--primary-yellow);
+            color: black;
+            font-weight: 800;
+            border-radius: 0;
+            padding: 12px 30px;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        .btn-yellow:hover {
+            background-color: #e6c200;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+        }
+
+        .glass-card {
+            background: var(--soft-black);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            padding: 2rem;
+            transition: 0.3s;
+        }
+
+        .glass-card:hover { border-color: var(--primary-yellow); }
+
+        footer { border-top: 2px solid var(--primary-yellow); }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg border-b border-[#FFD700] sticky-top bg-black/90 backdrop-blur-md">
+    <div class="container">
+        <a class="navbar-brand heading-font text-[#FFD700] text-2xl" onclick="showPage('home')">EDUSTREAM</a>
+        <button class="navbar-toggler bg-[#FFD700]" data-bs-toggle="collapse" data-bs-target="#navMenu"></button>
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ms-auto gap-3">
+                <li class="nav-item"><a class="nav-link active" onclick="showPage('home')">HOME</a></li>
+                <li class="nav-item"><a class="nav-link" onclick="showPage('admission')">ADMISSIONS</a></li>
+                <li class="nav-item"><a class="nav-link" onclick="showPage('dashboard')">DASHBOARD</a></li>
+                <li class="nav-item"><a class="nav-link" onclick="showPage('events')">EVENTS</a></li>
+                <li class="nav-item"><a class="nav-link" onclick="showPage('library')">LIBRARY</a></li>
+                <li class="nav-item"><a class="nav-link" onclick="showPage('gallery')">GALLERY</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div id="view-home" class="app-view view-active">
+    <section class="h-[80vh] flex items-center justify-center text-center bg-[url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80')] bg-cover bg-center bg-fixed" style="box-shadow: inset 0 0 0 2000px rgba(0,0,0,0.8);">
+        <div class="container">
+            <h1 class="heading-font text-5xl md:text-7xl mb-4">THE FUTURE IS <span class="text-[#FFD700]">YELLOW</span></h1>
+            <p class="text-xl mb-5 opacity-80">Empowering the next generation of Computer Science leaders at UniUyo.</p>
+            <button class="btn btn-yellow" onclick="showPage('admission')">Apply for 2026</button>
+        </div>
+    </section>
+
+    <section class="py-16 border-y border-[#FFD700]/30 bg-black">
+        <div class="container grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div><h2 class="text-[#FFD700] text-4xl font-bold">150+</h2><p>Tech Partners</p></div>
+            <div><h2 class="text-[#FFD700] text-4xl font-bold">5k+</h2><p>Students</p></div>
+            <div><h2 class="text-[#FFD700] text-4xl font-bold">98%</h2><p>Employment Rate</p></div>
+            <div><h2 class="text-[#FFD700] text-4xl font-bold">24/7</h2><p>Lab Access</p></div>
+        </div>
+    </section>
+
+    <section class="py-20 container">
+        <h2 class="heading-font text-center text-3xl mb-12">OUR CORE PROGRAMS</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="glass-card"><h3>Web Architecture</h3><p class="text-gray-400 mt-2">Full-stack mastery using modern JS frameworks.</p></div>
+            <div class="glass-card"><h3>Blockchain Eng</h3><p class="text-gray-400 mt-2">Solidity and Smart Contract development.</p></div>
+            <div class="glass-card"><h3>Software Models</h3><p class="text-gray-400 mt-2">System analysis and architectural design.</p></div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-[#FFD700] text-black text-center">
+        <h2 class="font-black text-2xl mb-4">STAY UPDATED</h2>
+        <div class="flex max-w-md mx-auto gap-2 px-4">
+            <input type="email" class="form-control border-2 border-black rounded-none" placeholder="Email Address">
+            <button class="bg-black text-white px-4 py-2 font-bold uppercase">Join</button>
+        </div>
+    </section>
+</div>
+
+<div id="view-admission" class="app-view">
+    <section class="py-20 bg-zinc-900 text-center"><h1 class="heading-font text-4xl">ADMISSION <span class="text-[#FFD700]">PORTAL</span></h1></section>
+    
+    <section class="container py-16 grid md:grid-cols-2 gap-10">
+        <div class="glass-card">
+            <h3 class="text-[#FFD700] mb-4">Application Steps</h3>
+            <ol class="space-y-4 opacity-80">
+                <li>1. Create an Account with valid email.</li>
+                <li>2. Upload O'Level Results and ID.</li>
+                <li>3. Pay Application Fee of ₦10,000.</li>
+                <li>4. Schedule Entrance Interview.</li>
+            </ol>
+        </div>
+        <div class="bg-white p-8 text-black">
+            <h3 class="font-bold mb-4">New Application</h3>
+            <input type="text" class="form-control mb-3" placeholder="Full Name">
+            <input type="email" class="form-control mb-3" placeholder="Email Address">
+            <select class="form-select mb-3"><option>Select Department</option><option>Computer Science</option></select>
+            <button class="btn btn-dark w-full rounded-none">Submit Interest</button>
+        </div>
+    </section>
+
+    <section class="py-16 bg-black border-t border-[#FFD700]/20">
+        <div class="container text-center">
+            <h4 class="text-[#FFD700] mb-5">Minimum Requirements</h4>
+            <div class="flex flex-wrap justify-center gap-4">
+                <span class="px-4 py-2 border border-[#FFD700]">5 Credits Math/English</span>
+                <span class="px-4 py-2 border border-[#FFD700]">UTME Score: 200+</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-10 text-center"><p>Questions? <span class="text-[#FFD700] underline">Contact Admission Office</span></p></section>
+</div>
+
+<div id="view-dashboard" class="app-view container py-10">
+    <div class="flex justify-between items-end border-b-2 border-[#FFD700] pb-4 mb-10">
+        <div><h1 class="heading-font text-3xl">STUDENT: TOMMY</h1><p class="text-gray-400">CS ID: 2026-ED-001</p></div>
+        <div class="bg-[#FFD700] text-black p-2 font-bold px-4">GPA: 3.85</div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+        <div class="col-span-2 glass-card">
+            <h5 class="text-[#FFD700] mb-4">Active Assignments</h5>
+            <div class="space-y-4">
+                <div class="p-3 bg-white/5 border-l-4 border-[#FFD700]">
+                    <p class="mb-0 font-bold">GST 211 - Philosophy Essay</p>
+                    <small class="text-gray-500">Due: 14th March</small>
+                </div>
+                <div class="p-3 bg-white/5 border-l-4 border-gray-600">
+                    <p class="mb-0 font-bold">SEN 211 - Software Diagrams</p>
+                    <small class="text-gray-500">Due: 20th March</small>
+                </div>
+            </div>
+        </div>
+        <div class="glass-card bg-[#FFD700]/10 border-[#FFD700]">
+            <h5 class="text-[#FFD700]">Upcoming Exams</h5>
+            <p class="text-2xl font-black mt-3">Calculus II</p>
+            <p class="text-sm">Monday, 9:00 AM - Hall A</p>
+            <button class="btn btn-yellow btn-sm mt-4 w-full">Print Slip</button>
+        </div>
+    </div>
+
+    <div class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="p-4 bg-zinc-900 text-center hover:bg-[#FFD700] hover:text-black cursor-pointer transition">Pay Fees</div>
+        <div class="p-4 bg-zinc-900 text-center hover:bg-[#FFD700] hover:text-black cursor-pointer transition">Course Reg</div>
+        <div class="p-4 bg-zinc-900 text-center hover:bg-[#FFD700] hover:text-black cursor-pointer transition">Results</div>
+        <div class="p-4 bg-zinc-900 text-center hover:bg-[#FFD700] hover:text-black cursor-pointer transition">Portal Settings</div>
+    </div>
+</div>
+
+<div id="view-events" class="app-view container py-10">
+    <div class="glass-card mb-10 text-center border-2 border-dashed border-[#FFD700]">
+        <h2 class="heading-font text-[#FFD700]">CALENDAR 2026</h2>
+        <p>Stay updated with university activities.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8">
+        <div class="flex gap-4 border-b border-zinc-800 pb-4">
+            <div class="bg-[#FFD700] text-black p-3 h-fit font-black">MAR 15</div>
+            <div><h4 class="font-bold">Tech Symposium 2026</h4><p class="text-sm text-gray-400">Keynote by Silicon Valley experts.</p></div>
+        </div>
+        <div class="flex gap-4 border-b border-zinc-800 pb-4">
+            <div class="bg-zinc-800 p-3 h-fit font-black">APR 02</div>
+            <div><h4 class="font-bold">Annual Sports Meet</h4><p class="text-sm text-gray-400">Inter-departmental competitions.</p></div>
+        </div>
+    </div>
+
+    <section class="py-20 mt-10 text-center border-t border-zinc-800">
+        <h3 class="heading-font mb-4">ORGANIZE AN EVENT?</h3>
+        <p class="mb-5">Submit your club's proposal to the Student Affairs office.</p>
+        <button class="btn btn-yellow">Download Form</button>
+    </section>
+
+    <div class="glass-card h-48 flex items-center justify-center text-gray-500">
+        [ Interactive Campus Map Placeholder ]
+    </div>
+</div>
+
+<div id="view-library" class="app-view container py-10">
+    <div class="mb-10 text-center">
+        <h1 class="heading-font text-3xl mb-4">DIGITAL <span class="text-[#FFD700]">ARCHIVE</span></h1>
+        <input type="text" class="form-control bg-transparent border-[#FFD700] text-white p-3 text-center" placeholder="Search books, journals, or thesis papers...">
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+        <div class="border border-zinc-700 p-10 text-center hover:border-[#FFD700] cursor-pointer">PHYSICS</div>
+        <div class="border border-zinc-700 p-10 text-center hover:border-[#FFD700] cursor-pointer">MATH</div>
+        <div class="border border-zinc-700 p-10 text-center hover:border-[#FFD700] cursor-pointer">COMPUTING</div>
+        <div class="border border-zinc-700 p-10 text-center hover:border-[#FFD700] cursor-pointer">ARTS</div>
+    </div>
+
+    <div class="glass-card">
+        <h5 class="mb-4 text-[#FFD700]">Trending Now</h5>
+        <div class="flex overflow-x-auto gap-4 pb-4">
+            <div class="min-w-[150px] h-[200px] bg-zinc-800 border-b-4 border-[#FFD700] p-3 text-sm">Clean Code: JS Edition</div>
+            <div class="min-w-[150px] h-[200px] bg-zinc-800 border-b-4 border-[#FFD700] p-3 text-sm">Discrete Mathematics</div>
+            <div class="min-w-[150px] h-[200px] bg-zinc-800 border-b-4 border-[#FFD700] p-3 text-sm">PHP & MySQL Mastery</div>
+        </div>
+    </div>
+
+    <div class="mt-10 p-4 bg-[#FFD700] text-black font-bold text-center">
+        STATUS: Main Library is OPEN (Closing at 10:00 PM)
+    </div>
+</div>
+
+<div id="view-gallery" class="app-view container py-10">
+    <div class="text-center mb-10"><h2 class="heading-font text-4xl">CAMPUS <span class="text-[#FFD700]">LIFE</span></h2></div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div class="bg-zinc-800 h-64 border border-[#FFD700]/20 flex items-center justify-center">Student Lounge</div>
+        <div class="bg-zinc-800 h-48 border border-[#FFD700]/20 flex items-center justify-center">Robotics Lab</div>
+        <div class="bg-zinc-800 h-64 border border-[#FFD700]/20 flex items-center justify-center">2025 Graduation</div>
+        <div class="bg-zinc-800 h-48 border border-[#FFD700]/20 flex items-center justify-center">Auditorium</div>
+        <div class="bg-zinc-800 h-64 border border-[#FFD700]/20 flex items-center justify-center">Sports Complex</div>
+        <div class="bg-zinc-800 h-48 border border-[#FFD700]/20 flex items-center justify-center">Faculty Block</div>
+    </div>
+
+    <div class="py-20 text-center border-t border-zinc-800 mt-20">
+        <p class="mb-4">Tag us on Instagram to get featured!</p>
+        <h4 class="text-[#FFD700] heading-font">#EDUSTREAM2026</h4>
+    </div>
+
+    <div class="glass-card text-center py-20">
+        <button class="btn btn-yellow">Watch Virtual Campus Tour</button>
+    </div>
+</div>
+
+<footer class="bg-black py-16 mt-20 px-4">
+    <div class="container grid md:grid-cols-3 gap-10">
+        <div>
+            <h4 class="heading-font text-[#FFD700] mb-4">EDUSTREAM</h4>
+            <p class="opacity-50 text-sm">Building the bridge between education and professional technology excellence.</p>
+        </div>
+        <div>
+            <h4 class="font-bold mb-4">QUICK LINKS</h4>
+            <ul class="list-none space-y-2 text-sm opacity-70">
+                <li onclick="showPage('home')" class="cursor-pointer hover:text-[#FFD700]">Main Page</li>
+                <li onclick="showPage('admission')" class="cursor-pointer hover:text-[#FFD700]">Join Us</li>
+                <li class="cursor-pointer hover:text-[#FFD700]">Contact Support</li>
+            </ul>
+        </div>
+        <div class="text-right">
+            <h4 class="font-bold mb-4">LOCATION</h4>
+            <p class="text-sm opacity-50">University of Uyo (UniUyo),<br>Akwa Ibom State, Nigeria.</p>
+        </div>
+    </div>
+    <div class="text-center mt-10 border-t border-white/10 pt-5 text-xs opacity-30 uppercase tracking-widest">
+        &copy; 2026 EduStream Academy. No Backend Version 4.0
+    </div>
+</footer>
+
+<script>
+    function showPage(viewId) {
+        // Hide all views
+        document.querySelectorAll('.app-view').forEach(v => v.classList.remove('view-active'));
+        // Show selected view
+        document.getElementById('view-' + viewId).classList.add('view-active');
+        
+        // Update Nav Active state
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.classList.remove('active');
+            if(link.innerText.toLowerCase() === viewId || (viewId === 'home' && link.innerText === 'HOME')) {
+                link.classList.add('active');
+            }
+        });
+
+        // Scroll to top
+        window.scrollTo(0,0);
+    }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
